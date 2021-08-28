@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dancinha do Romano</title>
+    <style>
+        main {
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        header {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        img {
+            width: 50%;
+        }
+        
+        #cesar {
+            width: 300px;
+            height: 300px;
+            border: solid 5px;
+            text-align: center;
+        }
+        
+        input {
+            width: 90%;
+        }
+        
+        #base {
+            width: 300px;
+            height: 300px;
+            border: solid 5px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+
+        <img src="img/passinho.gif">
+        <h1>Escolha o Tipo de codificação você Gostaria!</h1>
+
+    </header>
+    <main>
+        <div id="cesar">
+            <h2>Cifra de César</h2>
+            <form id="submit">
+                <input id="CesarUs" type="text">
+                <input type="submit" value="Codifique! ">
+            </form>
+            <span id="output"></span>
+
+        </div>
+        <div id="base ">
+            <h2>Base 64</h2>
+            <input type="text ">
+            <input type="button " value="Codifique! ">
+        </div>
+    </main>
+    <script src="index.js "></script>
+</body>
+
+</html>
