@@ -20,15 +20,18 @@
             <option value="" disabled selected >Escolha uma opção</option>
             <option value="cesar"  >Cifra de Cesar</option>
             <option value="base64" >base64</option>
-    
         </select>
+        <form action="https://pt.wikipedia.org/wiki/Cifra_de_C%C3%A9sar">
+            <button type="submit">O que é a Cifra de Cesar</button>
+        </form>
+        <form action="https://pt.wikipedia.org/wiki/Base64">
+            <button type="submit">O que é a Codificação de Base 64</button>
+        </form>
 
     </header>
     <main>
         <div id="cesar">
             <h2>Cifra de César</h2>
-
-
 
             <form id="cesarEnvio">
                 <label>Digite o Texto que voce gostaria de mudar</label>
@@ -44,12 +47,8 @@
                 <input type="radio" id="codificar" name="codOuDecod" checked="checked" value="codificar">
                 <label for="decod">Decodificar</label><br>
                 <input type="radio" id="decodificar" name="codOuDecod" value="decodificar">
-
             </form>
-
             <span id="output"></span>
-
-
 
         </div>
         <div id="base64">
@@ -67,15 +66,13 @@
                 <input type="radio" id="codificarBase" name="codOuDecod" checked="checked" value="codificarBase">
                 <label for="decod">Decodificar</label><br>
                 <input type="radio" id="decodificarBase" name="codOuDecod" value="decodificarBase">
-
             </form>
-
             <span id="outputBase"></span>
-
         </div>
-
-
     </main>
+    <footer>
+        <p class="copyright"> &copy; Criado por <a href="https://www.linkedin.com/in/caio-cavalcanti-17b50b13a/">Caio Cavalcanti</a> </p>
+    </footer>
     <script src="index.js "></script>
 </body>
 
