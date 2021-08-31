@@ -1,0 +1,64 @@
+main {
+    display: flex;
+    justify-content: space-around;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+img {
+    width: 50%;
+}
+
+#cesarEnvio {
+    margin-top: 10px;
+}
+
+#cesar {
+    width: 300px;
+    /* height: 300px; */
+    border: solid 5px;
+    text-align: center;
+    display: none;
+    flex-direction: column;
+}
+
+input {
+    width: 90%;
+}
+
+#criptografe {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#base64 {
+    width: 300px;
+    height: 300px;
+    border: solid 5px;
+    text-align: center;
+    display: none;
+    flex-direction: column;
+}
+
+#output {
+    margin: auto;
+    width: 80%;
+    height: 22px;
+    border: solid 1px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+    img {
+        width: 95%;
+        height: auto;
+    }
+}

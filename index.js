@@ -1,53 +1,43 @@
-var formSubmit = document.getElementById("submit")
+function mudandoCod() {
+    if (document.getElementById("EscolhaCode").value == "cesar") {
+        document.getElementById("cesar").style.display = "flex";
+        document.getElementById("base64").style.display = "none";
 
-formSubmit.addEventListener("submit", function(event) {
-    event.preventDefault();
-    var user = document.getElementById("CesarUs")
-    document.getElementById("output").innerHTML = user.value;
-})
+    } else if (document.getElementById("EscolhaCode").value == "base64") {
+        document.getElementById("base64").style.display = "flex";
+        document.getElementById("cesar").style.display = "none";
+    }
 
 
 
-
-
-console.log(cesar)
-
-function calcular() {
 
 }
 
 
+var formCesar = document.getElementById("cesarEnvio")
+formCesar.addEventListener("submit", function(event) {
+    event.preventDefault();
+    return cifraCesar()
 
-//         <script>
-//             var values = new Array("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
-//             var key = +document.getElementById("key").innerHTML;
+})
 
-//             function prev() {
-//                 if(key > 1) {
-//                     key--;
-//                     document.getElementById("key").innerHTML = key;
-//                 }
-//             }
 
-//             function next() {
-//                 if(key < 25) {
-//                     key++;
-//                     document.getElementById("key").innerHTML = key;
-//                 }
-//             }
+// if (document.getElementById('codificar').checked) {
+function cifraCesar() {
+    var alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    var letra = document.getElementById('input').value.toUpperCase();
+    var key = document.getElementById('deslocamento').value
+    var keyN = Number(key)
+    if (document.getElementById('decodificar').checked) {
+        keyN = keyN * (-1)
 
-//             function calculate() {
-//                 var input = document.getElementById("input").value.toUpperCase();
-//                 var result = "";
-
-//                 for(var i = 0; i<input.length; i++){ //Passa por cada caracter do input
-
-//                     var posicaoDaLetraNoAlfabeto = input.charCodeAt(i)-64; //Identifica qual letra é do alfabeto
-//                     var letraComDeslocamento = (posicaoDaLetraNoAlfabeto + key) % 26; //Faz o deslocamento de César e mantém dentro do alfabeto (26 letras)
-//                     letraComDeslocamento = letraComDeslocamento == 0 ? 26 : letraComDeslocamento; //MOD retornar 0 caso o resultado seja 26, tem que tratar isso
-//                     result += values[letraComDeslocamento-1]; //Faz -1 porque a letra 1 (A) está no índice 0 do teu array.
-//                 }
-
-//                 document.getElementById("output").innerHTML = result;
-//             }
-//         </script>
+    }
+    var resultado = ""
+    for (i = 0; i < letra.length; i++) {
+        var posicaoDaLetraNoAlfabeto = letra.charCodeAt(i) - 64; //Identifica qual letra é do alfabeto
+        var letraComDeslocamento = (posicaoDaLetraNoAlfabeto + keyN) % 26; //Faz o deslocamento de César e mantém dentro do alfabeto (26 letras)
+        console.log(keyN)
+        resultado += alfabeto[letraComDeslocamento - 1]; //Faz -1 porque a letra 1 (A) está no índice 0 do teu array.                    
+        document.getElementById("output").innerHTML = resultado;
+    }
+}

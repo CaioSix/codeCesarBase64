@@ -6,42 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dancinha do Romano</title>
-    <style>
-        main {
-            display: flex;
-            justify-content: space-around;
-        }
-        
-        header {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        
-        img {
-            width: 50%;
-        }
-        
-        #cesar {
-            width: 300px;
-            height: 300px;
-            border: solid 5px;
-            text-align: center;
-        }
-        
-        input {
-            width: 90%;
-        }
-        
-        #base {
-            width: 300px;
-            height: 300px;
-            border: solid 5px;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="stilo.css">
+
 
 </head>
 
@@ -50,19 +16,43 @@
 
         <img src="img/passinho.gif">
         <h1>Escolha o Tipo de codificação você Gostaria!</h1>
+        <select onchange="mudandoCod()" name="" id="EscolhaCode">
+            <option value="" disabled selected >Escolha uma opção</option>
+            <option value="cesar"  >Cifra de Cesar</option>
+            <option value="base64" >base64</option>
+    
+        </select>
 
     </header>
     <main>
         <div id="cesar">
             <h2>Cifra de César</h2>
-            <form id="submit">
-                <input id="CesarUs" type="text">
-                <input type="submit" value="Codifique! ">
+
+
+
+            <form id="cesarEnvio">
+                <label>Digite o Texto que voce gostaria de mudar</label>
+                <input id="input" type="text">
+                <label>Quanto te incremento voce gostaria</label>
+                <input id="deslocamento" type="number">
+                <input type="submit" value="Criptografe!" id="criptografe">
             </form>
+
+            <form onchange="codeOrDecode()">
+
+                <label for="cod">Codificar</label><br>
+                <input type="radio" id="codificar" name="codOuDecod" checked="checked" value="codificar">
+                <label for="decod">Decodificar</label><br>
+                <input type="radio" id="decodificar" name="codOuDecod" value="decodificar">
+
+            </form>
+
             <span id="output"></span>
 
+
+
         </div>
-        <div id="base ">
+        <div id="base64">
             <h2>Base 64</h2>
             <input type="text ">
             <input type="button " value="Codifique! ">
