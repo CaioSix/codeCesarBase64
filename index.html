@@ -38,7 +38,7 @@
                 <input type="submit" value="Criptografe!" id="criptografe">
             </form>
 
-            <form onchange="codeOrDecode()">
+            <form onchange="">
 
                 <label for="cod">Codificar</label><br>
                 <input type="radio" id="codificar" name="codOuDecod" checked="checked" value="codificar">
@@ -54,9 +54,27 @@
         </div>
         <div id="base64">
             <h2>Base 64</h2>
-            <input type="text ">
-            <input type="button " value="Codifique! ">
+            <form id="baseEnvio">
+                <label>Digite o texto que vooce gostaria de mudar?</label>
+                <input id="inputBase64" type="text">
+
+                <input type="submit" value="Codifique! ">
+            </form>
+
+            <form>
+
+                <label for="cod">Codificar</label><br>
+                <input type="radio" id="codificarBase" name="codOuDecod" checked="checked" value="codificarBase">
+                <label for="decod">Decodificar</label><br>
+                <input type="radio" id="decodificarBase" name="codOuDecod" value="decodificarBase">
+
+            </form>
+
+            <span id="outputBase"></span>
+
         </div>
+
+
     </main>
     <script src="index.js "></script>
 </body>

@@ -17,7 +17,7 @@ function mudandoCod() {
 var formCesar = document.getElementById("cesarEnvio")
 formCesar.addEventListener("submit", function(event) {
     event.preventDefault();
-    return cifraCesar()
+    return cifraCesar();
 
 })
 
@@ -39,5 +39,22 @@ function cifraCesar() {
         console.log(keyN)
         resultado += alfabeto[letraComDeslocamento - 1]; //Faz -1 porque a letra 1 (A) está no índice 0 do teu array.                    
         document.getElementById("output").innerHTML = resultado;
+    }
+}
+
+var formBase = document.getElementById("baseEnvio")
+formBase.addEventListener("submit", function(event) {
+    event.preventDefault();
+    return funfandoBase64();
+
+})
+
+function funfandoBase64() {
+    var dadoBase = document.getElementById("inputBase64").value
+
+    if (document.getElementById('codificarBase').checked) {
+        outputBase.innerHTML = atob(dadoBase);
+    } else if (document.getElementById("decodificarBase").checked) {
+        outputBase.innerHTML = btoa(dadoBase);
     }
 }
