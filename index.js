@@ -22,16 +22,19 @@ formCesar.addEventListener("submit", function(event) {
 })
 
 
-// if (document.getElementById('codificar').checked) {
+
 function cifraCesar() {
     var alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     var letra = document.getElementById('input').value.toUpperCase();
     var key = document.getElementById('deslocamento').value
     var keyN = Number(key)
+
     if (document.getElementById('decodificar').checked) {
         keyN = keyN * (-1)
-
     }
+    // if (letra == " " | Number(letra)) {
+    //     alert("A codificação não aceita espaço nem numero")
+    // }
     var resultado = ""
     for (i = 0; i < letra.length; i++) {
         var posicaoDaLetraNoAlfabeto = letra.charCodeAt(i) - 64; //Identifica qual letra é do alfabeto
@@ -39,6 +42,7 @@ function cifraCesar() {
         console.log(keyN)
         resultado += alfabeto[letraComDeslocamento - 1]; //Faz -1 porque a letra 1 (A) está no índice 0 do teu array.                    
         document.getElementById("output").innerHTML = resultado;
+        // alert(resultado)
     }
 }
 
@@ -50,8 +54,8 @@ formBase.addEventListener("submit", function(event) {
 })
 
 function funfandoBase64() {
-    var dadoBase = document.getElementById("inputBase64").value
 
+    var dadoBase = document.getElementById("inputBase64").value
     if (document.getElementById('codificarBase').checked) {
         outputBase.innerHTML = atob(dadoBase);
     } else if (document.getElementById("decodificarBase").checked) {
